@@ -1,3 +1,4 @@
+import HeaderMenu from "./components/header_menu";
 import "./globals.css";
 
 export const metadata = {
@@ -7,8 +8,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body>
+        <HeaderMenu />
         {children}
       </body>
     </html>
