@@ -1,8 +1,11 @@
+import article_list from "./mock_articles";
+import ArticleList from "./components/article_list";
+
 export default function Home() {
   return (
     <div className="flex">
       <main className="flex justify-center items-center" >
-        <h1>Olá esse é seu site de Drama</h1>
+        <ArticleList article_list={article_list} />
       </main>
     </div>
   );

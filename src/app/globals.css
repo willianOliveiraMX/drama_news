@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
-@theme inline {
-
+@theme {
+  --color-orange-1: #d77b00;
+  --bg-orange-2: #d53500;
+  --color-gray-line: #d7d7d7;
 }
 
 @media (prefers-color-scheme: dark) {
