@@ -1,8 +1,9 @@
-import article_list from "@/app/mock_articles";
+import dramaNewsApi from "@/app/services/drama_news_api";
 import Article from '@/app/components/article';
 
-export async function generateMetadata() {
-  const article_content = article_list[0];
+export async function generateMetadata({ params }) {
+  const { category, date, slug } = await params;
+  const article_content = await dramaNewsApi.getArticleBySlug(`/${category}/${date}/${slug}`);
 
   return {
     title: article_content.seo.title_tag,
@@ -25,8 +26,7 @@ export async function generateMetadata() {
 
 const Page = async ({ params }) => {
   const { category, date, slug } = await params;
-  
-  const article_content = article_list[0];
+  const article_content = await dramaNewsApi.getArticleBySlug(`/${category}/${date}/${slug}`);
 
   return (
     <>
