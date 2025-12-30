@@ -16,8 +16,8 @@ const Menu = () => {
 
   const menuItems = [
     { label: 'Início', href: '/' },
-    { label: 'Artigos', href: '/artigos' },
-    { label: 'Notícias', href: '/noticias' },
+    { label: 'Artigos', href: '/artigo' },
+    { label: 'Notícias', href: '/notícia' },
     { label: 'Opinião', href: '/opinião' },
     { label: 'Rumor', href: '/rumor' },
   ];

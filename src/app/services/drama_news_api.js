@@ -37,6 +37,24 @@ const dramaNewsApi = {
       throw error;
     }
   },
+  getArticlesByCategory: async (category) => {
+    try {
+      const response = await request({
+        url: `${config.drama_news_api.url}/api/v1/articles/category/?type=${category}`,
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        token: process.env.DRAMA_NEWS_API_KEY || null,
+      });
+      const { data: { body } } = response;
+
+      return { articles: body.data, total: body.total };
+    } catch (error) {
+      console.error(`Error fetching articles by category ${category}:`, error);
+      throw error;
+    }
+  }
 };
 
 export default dramaNewsApi;
