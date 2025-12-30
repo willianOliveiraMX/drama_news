@@ -2,7 +2,7 @@ import ArticleCard from "../article_card";
 
 const ArticleList = ({ article_list = [] }) => {
   return (
-    <div className="flex flex-col pt-10">
+    <div className="pt-10">
       {article_list.length === 0 ? (
         <p>Infelizmente não foi possível carregar a listagem de artigos.</p>
       ) : (

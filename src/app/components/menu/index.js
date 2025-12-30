@@ -30,7 +30,7 @@ const Menu = () => {
         aria-label="Menu"
       >
         <span
-          className={`block w-6 h-0.5 bg-current transition-all duration-300 ease-in-out ${isOpen ? 'rotate-45 translate-y-1.5' : '-translate-y-1'
+          className={`block w-6 h-0.5 bg-current transition-all duration-300 ease-in-out ${isOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-1'
             }`}
         />
         <span
@@ -51,7 +51,7 @@ const Menu = () => {
       )}
 
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-orange-1 shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed top-0 left-0 h-full w-64 bg-orange-1 shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
       >
         <div className="p-6">

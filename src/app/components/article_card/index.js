@@ -6,7 +6,7 @@ const ArticleCard = ({ article_content }) => {
 
   return (
     <Link href={article_content.slug}>
-      <section className="m-1 mb-3.5 pb-3.5 min-w-105 flex justify-between border-b border-gray-300">
+      <section className="m-1 mb-3.5 pb-3.5 flex justify-between border-b border-gray-300">
         <div className="pr-4">
           <span className="text-xs text-white p-1.5 bg-[#d53500] font-bold">{article_content.type}</span>
           <h3 className="text-2xl font-bold pb-0.5">
@@ -25,8 +25,9 @@ const ArticleCard = ({ article_content }) => {
         </div>
 
         <div>
-          {/* <img src={cover_image.url} alt={cover_image.alt_text} /> */}
-          <div className="w-32 h-32 bg-blue-500"></div>
+          <div  className="w-22 h-22 sm:w-32 sm:h-32 bg-orange-1">
+            {/* <img src={cover_image.url} alt={cover_image.alt_text} /> */}
+          </div>
         </div>
       </section>
     </Link>

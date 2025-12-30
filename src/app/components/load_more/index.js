@@ -12,7 +12,7 @@ export default function LoadMoreArticles({ initialArticles, total, limit }) {
   const loadMore = async () => {
     const response = await fetch(`/api/articles?limit=${limit}&offset=${offset}`);
     const newArticles = await response.json();
-    console.log('newArticles', newArticles);
+
     setArticles([...articles, ...newArticles.articles]);
     setOffset(offset + limit);
     router.replace(`/?offset=${offset + limit}`, { scroll: false });
