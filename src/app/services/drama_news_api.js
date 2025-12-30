@@ -14,9 +14,8 @@ const dramaNewsApi = {
       });
       const { data: { body } } = response;
 
-      return body.data;
+      return { articles: body.data, total: body.total };
     } catch (error) {
-      console.error('Error fetching articles:', error);
       throw error;
     }
   },
@@ -32,7 +31,7 @@ const dramaNewsApi = {
       });
       const { data: { body } } = response;
 
-      return body.data;
+      return {article: body.data};
     } catch (error) {
       console.error(`Error fetching article with slug ${slug}:`, error);
       throw error;

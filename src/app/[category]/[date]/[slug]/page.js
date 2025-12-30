@@ -3,34 +3,34 @@ import Article from '@/app/components/article';
 
 export async function generateMetadata({ params }) {
   const { category, date, slug } = await params;
-  const article_content = await dramaNewsApi.getArticleBySlug(`/${category}/${date}/${slug}`);
+  const { article } = await dramaNewsApi.getArticleBySlug(`/${category}/${date}/${slug}`);
 
   return {
-    title: article_content.seo.title_tag,
-    description: article_content.seo.meta_description,
-    author: article_content.author.name,
+    title: article.seo.title_tag,
+    description: article.seo.meta_description,
+    author: article.author.name,
     article: {
-      published_time: article_content.dates.published,
-      modified_time: article_content.dates.modified,
-      authors: [article_content.author.name],
+      published_time: article.dates.published,
+      modified_time: article.dates.modified,
+      authors: [article.author.name],
     },
     locale: 'pt_BR',
     site_name: 'Drama News',
     openGraph: {
-      images: [article_content.social_graph.og_image],
+      images: [article.social_graph.og_image],
       type: 'article',
-      url: article_content.seo.canonical_url
+      url: article.seo.canonical_url
     }
   };
 }
 
 const Page = async ({ params }) => {
   const { category, date, slug } = await params;
-  const article_content = await dramaNewsApi.getArticleBySlug(`/${category}/${date}/${slug}`);
+  const { article } = await dramaNewsApi.getArticleBySlug(`/${category}/${date}/${slug}`);
 
   return (
     <>
-      <Article article_content={article_content} />
+      <Article article_content={article} />
     </>
   );
 };

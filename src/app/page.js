@@ -1,13 +1,18 @@
-import ArticleList from "./components/article_list";
 import dramaNewsApi from "./services/drama_news_api";
+import LoadMoreArticles from "./components/load_more";
+import config from "./config";
 
-export default async function Home() {
-  const article_list = await dramaNewsApi.getAllArticles();
+export default async function Home({ searchParams }) {
+  const { offset: searchParamOffset } = await searchParams;
+  const limit = config.limit_page;
+  const offset = Number(searchParamOffset) || 0;
+  
+  const { articles, total } = await dramaNewsApi.getAllArticles(limit, offset);
 
   return (
     <div className="flex">
-      <main className="flex justify-center items-center" >
-        {article_list ? <ArticleList article_list={article_list} /> : <span>loading</span>}
+      <main className="flex flex-col justify-center items-center w-full" >
+        {articles ? <LoadMoreArticles initialArticles={articles} total={total} limit={limit} /> : <span>loading</span>}
       </main>
     </div>
   );
