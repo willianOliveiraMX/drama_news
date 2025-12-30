@@ -17,9 +17,9 @@ const Menu = () => {
   const menuItems = [
     { label: 'Início', href: '/' },
     { label: 'Artigos', href: '/artigos' },
-    { label: 'Notícias', href: '/artigos/noticias' },
-    { label: 'Vídeos', href: '/artigos/videos' },
-    { label: 'Materiais', href: '/artigos/materiais' },
+    { label: 'Notícias', href: '/noticias' },
+    { label: 'Opinião', href: '/opinião' },
+    { label: 'Rumor', href: '/rumor' },
   ];
 
   return (
@@ -65,7 +65,7 @@ const Menu = () => {
                   <Link
                     href={item.href}
                     onClick={closeMenu}
-                    className="block py-2 px-4 text-zinc-100 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-lg transition-colors duration-200"
+                    className="block py-2 px-4 text-zinc-100 hover:text-zinc-600 dark:text-fuchsia-50 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-lg transition-colors duration-200"
                   >
                     {item.label}
                   </Link>
