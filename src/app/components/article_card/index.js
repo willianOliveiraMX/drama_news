@@ -24,15 +24,19 @@ const ArticleCard = ({ article_content }) => {
           </div>
         </div>
 
-        <div className="relative w-22 h-22 sm:w-32 sm:h-32 shrink-0 aspect-square bg-orange-1 overflow-hidden rounded">
-          <Image 
-            src={cover_image.url} 
-            alt={cover_image.alt_text} 
-            fill
-            sizes="(max-width: 640px) 88px, 128px"
-            className="object-cover"
-            priority
-          />
+        <div className="relative w-22 h-32 sm:w-32 sm:h-45 shrink-0 aspect-square bg-orange-1 overflow-hidden rounded">
+          {
+            !!cover_image && (
+              <Image 
+                src={cover_image.url} 
+                alt={cover_image.alt_text} 
+                fill
+                sizes="(max-width: 640px) 88px, 128px"
+                className="object-cover"
+                priority
+              />
+            )
+          }
         </div>
       </section>
     </Link>

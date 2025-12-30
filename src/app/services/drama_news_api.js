@@ -16,7 +16,7 @@ const dramaNewsApi = {
 
       return { articles: body.data, total: body.total };
     } catch (error) {
-      throw error;
+      return { articles: [], total: 0 };
     }
   },
   getArticleBySlug: async (slug) => {
@@ -34,7 +34,7 @@ const dramaNewsApi = {
       return {article: body.data};
     } catch (error) {
       console.error(`Error fetching article with slug ${slug}:`, error);
-      throw error;
+      return { articles: [], total: 0 };
     }
   },
   getArticlesByCategory: async (category) => {
@@ -52,7 +52,7 @@ const dramaNewsApi = {
       return { articles: body.data, total: body.total };
     } catch (error) {
       console.error(`Error fetching articles by category ${category}:`, error);
-      throw error;
+      return { articles: [], total: 0 };
     }
   }
 };
